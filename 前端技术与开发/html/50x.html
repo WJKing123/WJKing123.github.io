@@ -1,0 +1,43 @@
+ 
+<!DOCTYPE html>  
+<html>  
+<head>  
+<meta charset="UTF-8">  
+<title>时钟</title>  
+<script>  
+function showTime(){  
+var date = new Date();  
+var year = date.getFullYear();  
+var month = date.getMonth() + 1;  
+var day = date.getDate();  
+var hour = date.getHours();  
+var minute = date.getMinutes();  
+var second = date.getSeconds();  
+if (month < 10) {  
+month = "0" + month;  
+}  
+if (day < 10) {  
+day = "0" + day;  
+}  
+if (hour < 10) {  
+hour = "0" + hour;  
+}  
+if (minute < 10) {  
+minute = "0" + minute;  
+}  
+if (second < 10) {  
+second = "0" + second;  
+}  
+var time = year + "-" + month + "-" + day + " " + hour + ":" + minute + ":" + second;  
+document.getElementById("clock").innerHTML = time;  
+}  
+setInterval(showTime, 1000);  
+</script>  
+</head>  
+<body>  
+<h1>当前时间</h1>  
+<link rel="stylesheet" href="wj.css">
+<div id="clock"></div>  
+<p class="special">dwajhk</p>
+</body>  
+</html>     

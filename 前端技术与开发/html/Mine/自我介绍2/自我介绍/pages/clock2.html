@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <style>
+        @import url('https://fonts.googleapis.com/css?family=Roboto+Slab');
+
+html, body { width:100%; height:100%; margin:0; padding:0; background:#141414; }
+
+#clock {
+  position: absolute;
+  top:0; bottom:0; left:0; right:0;
+  margin:auto;
+  width:1000px;
+  height:200px;
+  text-align:center;
+}
+
+.num {
+  position:relative;
+  display:inline-block;
+  width:140px;
+  height:200px;
+  font: 140px 'Roboto Slab', sans-serif;
+  color:#404040;
+  background:rgba(90,90,90,1);
+  border:solid 3px #404040;
+  box-sizing:border-box;
+  border-radius:18px;
+}
+
+.colon {
+  position:relative;
+  display:inline-block;
+  font: 140px 'Roboto Slab', sans-serif;
+  top:-60px;
+  left:-2px;
+  color:#C3C3C3;
+}
+
+.base span {
+  position:absolute;
+  display:block;
+  width:100%;
+}
+
+.upper {
+  position:absolute;  
+  width:100%;
+  height:50%;
+  background:linear-gradient(0deg, rgba(200,200,200,1), rgba(255,255,255,1) 15%);
+  border-radius:15px 15px 0 0;  
+  box-shadow: inset 0 1px 8px rgba(0,0,0,.1);
+  overflow:hidden;
+  border-bottom:solid 1px rgba(0,0,0,.5);
+  box-sizing:border-box;
+}
+
+.lower {
+  position:absolute;
+  top:50%;
+  width:100%;
+  height:50%;
+  background:linear-gradient(180deg, rgba(200,200,200,1), rgba(255,255,255,1) 15%);
+  border-radius:0 0 15px 15px;  
+  box-shadow: inset 0 -3px 5px rgba(0,0,0,.2);
+  overflow:hidden;
+  border-top:solid 1px #ddd;
+  box-sizing:border-box;
+}
+
+.lower span {
+  position:relative;
+  top:-100%;
+}
+    </style>
+    <title>Document</title>
+</head>
+<body>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.2/TweenMax.min.js"></script>
+        <div id="clock">
+          <div id="h10" class="num">
+            <div class="upper"></div>
+            <div class="base upper"></div>
+            <div class="base lower"></div>
+            <div class="lower"></div>
+          </div>
+          
+          <div id="h0" class="num">
+            <div class="upper"></div>
+            <div class="base upper"></div>
+            <div class="base lower"></div>
+            <div class="lower"></div>
+          </div>
+          
+          <div class="colon">:</div>
+          
+          <div id="m10" class="num">
+            <div class="upper"></div>
+            <div class="base upper"></div>
+            <div class="base lower"></div>
+            <div class="lower"></div>
+          </div>
+          
+          <div id="m0" class="num">
+            <div class="upper"></div>
+            <div class="base upper"></div>
+            <div class="base lower"></div>
+            <div class="lower"></div>
+          </div>
+          
+          <div class="colon">:</div>
+          
+          <div id="s10" class="num">
+            <div class="upper"></div>
+            <div class="base upper"></div>
+            <div class="base lower"></div>
+            <div class="lower"></div>
+          </div>
+          
+          <div id="s0" class="num">
+            <div class="upper"></div>
+            <div class="base upper"></div>
+            <div class="base lower"></div>
+            <div class="lower"></div>
+          </div>
+        </div>
+    <script>
+        // set 3d transforms
+TweenMax.set("#clock", {perspective:1500})
+TweenMax.set(".upper", {rotationX:0.01, transformOrigin:"50% 100%"})
+TweenMax.set(".lower", {rotationX:0.01, transformOrigin:"50% 0%"})
+
+// set clock
+var t, ss, mm, hh;
+setTimeVars();
+function setTimeVars(){
+  t = new Date();
+  t = new Date();
+	ss = String(t.getSeconds());
+  mm = String(t.getMinutes());
+  hh = String(t.getHours() );
+  if (ss.length==1) ss = "0"+ss;
+  if (mm.length==1) mm = "0"+mm;
+  if (hh.length==1) hh = "0"+hh;
+}
+
+h10.childNodes[3].innerHTML = h10.childNodes[7].innerHTML = "<span>"+Number(hh.substr(0,1))+"</span>";
+h0.childNodes[3].innerHTML = h0.childNodes[7].innerHTML = "<span>"+Number(String(hh).substr(1,1))+"</span>";
+
+m10.childNodes[3].innerHTML = m10.childNodes[7].innerHTML = "<span>"+Number(mm.substr(0,1))+"</span>";
+m0.childNodes[3].innerHTML = m0.childNodes[7].innerHTML = "<span>"+Number(mm.substr(1,1))+"</span>";
+
+s10.childNodes[3].innerHTML = s10.childNodes[7].innerHTML = "<span>"+Number(ss.substr(0,1))+"</span>";
+s0.childNodes[3].innerHTML = s0.childNodes[7].innerHTML = "<span>"+Number(ss.substr(1,1))+"</span>";
+
+
+// start ticking
+var interval = setInterval(function(){
+ 	setTimeVars();
+  
+  tick(s0, Number(ss.substr(1,1)) )
+  
+  if (ss.substr(1,1)=="9"){
+    tick(s10, Number(ss.substr(0,1)) ) 
+    if (ss=="59"){
+      tick(s10, 5, true)
+      tick(m0, Number(mm.substr(1,1)))
+      if (mm.substr(1,1)=="9"){
+        tick(m10, Number(mm.substr(0,1)))
+        if (mm=="59") {
+          tick(m10, 5, true)
+          tick(h0, Number(hh.substr(1,1)))
+          if (hh.substr(1,1)=="9") tick(h10, Number(hh.substr(0,1)))
+          if (hh=="12") {
+            tick(h0, Number(hh.substr(0,1)), true)
+            tick(h10, Number(hh.substr(1,1)), true)
+          }
+        }
+      }
+    }
+  }
+  
+}, 1000)
+
+function tick(mc,i, toZero=false){
+  // set numbers
+  mc.childNodes[3].innerHTML = "<span>"+i+"</span>"; //start upper
+  mc.childNodes[5].innerHTML = "<span>"+i+"</span>"; //start lower
+  if ( i==9 || toZero ) i=-1;
+  mc.childNodes[1].innerHTML = "<span>"+(i+1)+"</span>"; //end upper
+  mc.childNodes[7].innerHTML = "<span>"+(i+1)+"</span>"; //end lower
+  // animate tick
+  TweenMax.fromTo(mc.childNodes[1], .3, {alpha:0},{alpha:1, ease:Power4.easeIn})  
+  TweenMax.fromTo(mc.childNodes[3], .3, {rotationX:0, background:"linear-gradient(0deg, rgba(200,200,200,1), rgba(255,255,255,1) 15%)"},{rotationX:-90, ease:Power1.easeIn})
+  TweenMax.fromTo(mc.childNodes[7], .5+.2*Math.random(), {rotationX:90},{rotationX:0, ease:Bounce.easeOut, delay:.3})
+  TweenMax.fromTo(mc.childNodes[5], .6, {alpha:1},{alpha:0, ease:Bounce.easeOut, delay:.3})  
+}
+
+    </script>
+</body>
+</html>

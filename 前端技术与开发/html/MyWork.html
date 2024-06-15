@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <title>网络21-2班 王俊 202108060918</title>
+    <style>
+        body {
+            font-family: 'Roboto', Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            margin: 0;
+            padding: 20px;
+        }
+        .card-container {
+            background-color: linear-gradient(to bottom, #f5f5f5, #fdfd96); /* 新的背景颜色渐变 */
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            padding: 20px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        header {
+            background-image: url('image/MyName.png');
+            background-size: contain; 
+            background-position: center;
+            background-repeat: no-repeat;
+            padding: 20px 0;
+            border-radius: 10px 10px 0 0;
+            margin-bottom: 20px;
+        }
+        h1 {
+            font-size: 32px; /* 调整字体大小以美化 */
+            text-align: center; /* 居中对齐 */
+            margin-top: 0; /* 移除上方外边距 */
+            padding-top: 20px; /* 添加内边距以保持与下方内容的距离 */
+        }
+        h2 {
+            font-size: 24px; /* 调整h2的字体大小 */
+            color: #fff; /* 设置颜色以匹配背景 */
+            text-align: center; /* 居中对齐 */
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.1); /* 添加文本阴影效果 */
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        li {
+            margin: 10px 0;
+            padding: 10px 20px;
+            background-color: #f9f9f9;
+            border-radius: 5px;
+            box-shadow: 2px 2px 5px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            width: 100%;
+            text-align: center;
+        }
+        li:hover {
+            background-color: #e0e0e0;
+            transform: translateY(-2px);
+        }
+        a {
+            text-decoration: none;
+            color: #333;
+            font-weight: bold;
+            padding: 8px 10px;
+            border: 2px solid transparent;
+            border-radius: 5px;
+            display: inline-block;
+            width: 100%;
+            text-align: center;
+        }
+        a:hover {
+            color: #007BFF;
+            border-color: #007BFF;
+        }
+        .icon {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            margin-right: 10px;
+            vertical-align: middle;
+        }
+        .icon-food {
+            background-image: url('https://cdn.iconfont.cn/crawl/16x16/food.png?from=iconfont');
+            background-size: contain;
+            background-repeat: no-repeat;
+        }
+        .icon-search {
+            background-image: url('https://cdn.iconfont.cn/crawl/16x16/search.png?from=iconfont');
+            background-size: contain;
+            background-repeat: no-repeat;
+        }
+        .icon-money {
+            background-image: url('https://cdn.iconfont.cn/crawl/16x16/money.png?from=iconfont');
+            background-size: contain;
+            background-repeat: no-repeat;
+        }
+    </style>
+</head>
+<body>
+    <div class="card-container">
+        <header>
+            <h1>我的作业展示</h1>
+            <h2>网络21-2班王俊202108060918</h2>
+        </header>
+        <ul>
+            <li>
+                <a href="周边美食.html" target="_blank">
+                    <span class="icon icon-food"></span>
+                    第一次作业 - 周边美食
+                </a>
+            </li>
+            <li>
+                <a href="百度.html" target="_blank">
+                    <span class="icon icon-search"></span>
+                    第二次作业 - X度模仿
+                </a>
+            </li>
+            <li>
+                <a href="MakeSaveMoney.html" target="_blank">
+                    <span class="icon icon-money"></span>
+                    第三次作业 - 智慧理财
+                </a>
+            </li>
+        </ul>
+    </div>
+</body>
+</html>

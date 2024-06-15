@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		
+		<meta charset="utf-8">
+		<title>我的家乡</title>
+		<link rel="stylesheet" type="text/css" href="css/index.css" />
+		<link rel="stylesheet" href="css/bottom.css">
+		<link rel="stylesheet" href="css/card.css">
+	</head>
+	<body>
+		<div class="nav nav_other">
+			<a href="index.html">
+				<p id="flag1">首页</p>
+			</a>
+			<a href="民俗文化.html">
+				<p class="button">民俗文化</p>
+			</a>
+			<a href="风景名胜.html">
+				<p class="button">风景名胜</p>
+			</a>
+			<a href="特产美食.html">
+				<p class="button">特产美食</p>
+			</a>
+			<a href="教育.html">
+				<p class="button"><h3><font color="black">教育</font></h3></p>
+			</a>
+			<a href="地理位置.html">
+				<p class="button">地理位置</p>
+			</a>
+			<a href=""><div class="clock">
+			    <p id="1">0</p>
+			    <p id="2">0</p>
+			    <p id="3">:</p>
+			    <p id="4">0</p>
+			    <p id="5">0</p>
+			    <p id="6">:</p>
+			    <p id="7">0</p>
+			    <p id="8">0</p>
+			</div></a>
+		</div>
+
+		<!-- 导航栏 -->
+		<div class="side_nav other">
+			<div class="last"><a href="#"><img src="img/go-top.png" alt=""></a></div>
+			<div class="last2"><a href="#color"><img src="img/go_bottom.png" alt=""></a></div>
+		</div>
+
+		<div class="bigbox"></div>
+
+		<div class="main">
+			
+			<div id="yy">
+			
+				<div class="part2">
+					<div id="first">
+						<div id="one">
+							<h1 id="flag5">
+								教育
+							</h1>
+						</div>
+						<div id="two">
+							<hr>
+						</div>
+					</div>
+					
+					<div id="second">
+						<font face="华文楷体">
+							<div id="pg3">
+								<p >2022年，邵东市高中（包括职业高中）在校人数24984人，初中在校人数为48230人。幼儿园在园幼儿人数23407人。</p><br>
+								<p >小学适龄儿童入学率达100%，小学毕业生升学率达100%，高中阶段教育毛入学率达到93.28%，落实义务教育保障资金11132万元，发放中职国家助学金223.9万元。</p><br>
+							    <p>2022年，邵东市高新技术产业增加值217.94亿元，高新技术产业增加值占GDP比重达到30.2%。授权专利803件，其中发明专利77件。</p><br>
+							    <p>截至2022年底，邵东市有文化馆1个，公共图书馆1个。市级非物质文化遗产保护目录24个。档案馆1个，已开放各类档案6.6万卷。</p>
+							</div>
+						</font>
+					</div>
+					<br>
+					<div id="bigdiv">
+						<span id="biaoti">
+							高等院校
+						</span>
+						<div class="card">
+						    <div class="photo"><img src="img/邵东一中.png" alt=""></div>
+						    <h1>邵东一中</h1>
+						    <h2>No.1 HIGH SCHOOL SHAODONG HUNAN</h2>
+						    <p><h3>校训:</h3>自觉 团结 勤奋 向上</p>
+						    <a href="http://www.sdyz.cn/">了解更多</a>
+						</div>
+						<div class="card" id="mid">
+						    <div class="photo"><img src="img/邵阳学院.png" alt=""></div>
+						    <h1>邵阳学院</h1>
+						    <h2>SHAOYANG UNIVERSITY</h2>
+						    <p><h3 >校训:</h3>明德求真 共生超越</p>
+						    <a  id="ljgd" href="https://www.hnsyu.edu.cn/">了解更多</a>
+						</div>
+						<div class="card">
+						    <div class="photo"><img src="img/邵东三中.png" alt=""></div>
+						    <h1>邵东三中</h1>
+						    <h2>THE THIRD HIGH SCHOOL OF SHAODONG HUNAN</h2>
+						    <p><h3>校训</h3>求真 扬善 尚美</p>
+						    <a href="https://www.hnsdsz.cn/">了解更多</a>
+						</div>
+					</div>
+					
+				</div>
+			
+			</div>
+
+			<div class="footer">
+				<div id="color">
+					<span>制作：网络工程21-2班202108060918----王俊</span>
+				</div>
+			</div>
+			</div>
+	</body>
+</html>
+<script type="text/javascript">
+	    function myTime(){
+	        let time=new Date();
+	        let hh=time.getHours();  //时
+	        let mm=time.getMinutes();  //分
+	        let ss=time.getSeconds();  //秒
+	        // Math.floor() 向下取整
+	        document.getElementById("1").innerText=Math.floor(hh/10);
+	        document.getElementById("2").innerText=hh%10;
+	        document.getElementById("4").innerText=Math.floor(mm/10);
+	        document.getElementById("5").innerText=mm%10;
+	        document.getElementById("7").innerText=Math.floor(ss/10);
+	        document.getElementById("8").innerText=ss%10;
+	    }
+	    // 一秒执行一次
+	    setInterval(myTime,1000);
+	</script>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Welcome to nginx!</title>
+	<style>
+		body {
+			width: 35em;
+			margin: 0 auto;
+			font-family: Tahoma, Verdana, Arial, sans-serif;
+		}
+	</style>
+</head>
+<body>
+	<h1>Welcome to nginx!</h1>
+	<p>If you see this page, the nginx web server is successfully installed and working. Further configuration is required.</p>
+
+	<p>For example, you can add a new virtual host using the following steps:</p>
+	<ol>
+		<li>Create a new configuration file in <code>/etc/nginx/conf.d/</code> named after your domain, e.g. <code>example.com.conf</code>.</li>
+		<li>Add the following content to the file:
+			<pre>
+server {
+	listen 80;
+	server_name example.com;
+
+	location / {
+		root /var/www/example.com;
+		index index.html index.htm;
+	}
+}
+			</pre>
+		</li>
+		<li>Create the directory <code>/var/www/example.com</code> and place your website files in it.</li>
+		<li>Restart nginx using the command <code>sudo systemctl restart nginx</code>.</li>
+	</ol>
+
+    <aside>Note: This is just an example configuration, and you may                     </aside>
+
+	<p>You can replace <code>example.com</code> with your own domain name, and adjust the file paths and index file names as needed.</p>
+
+	<p>For more information, see the <a href="http://nginx.org/en/docs">nginx documentation</a>.</p>
+</body>
+</html>

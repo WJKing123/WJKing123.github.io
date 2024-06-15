@@ -1,0 +1,32 @@
+{
+	"pages": [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
+		{
+			"path": "pages/index/WJ-card",
+			"style": {
+				"navigationBarTitleText": "WJ-card布局"
+			}
+		},
+		{
+			"path": "pages/index/WJ-grid",
+			"style": {
+				"navigationBarTitleText": "WJ-grid布局"
+			}
+		},
+		{
+			"path": "pages/index/WJ-waterfall",
+			"style": {
+				"navigationBarTitleText": "WJ-waterfall布局"
+			}
+		}
+	],
+	"globalStyle": {
+		"navigationBarTextStyle": "black",
+		"navigationBarTitleText": "uni-app",
+		"navigationBarBackgroundColor": "#F8F8F8",
+		"backgroundColor": "#F8F8F8"
+	},
+	"uniIdRouter": {},
+	"easycom": {
+		"^u-(.*)": "@/uni_modules/uView-ui/components/u-$1/u-$1.vue"
+	}
+}

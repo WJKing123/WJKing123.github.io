@@ -1,0 +1,37 @@
+{
+  "id": "4521368",
+  "name": "no name",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "6961129",
+      "name": "卡片列表",
+      "font_class": "qiapianliebiao",
+      "unicode": "e642",
+      "unicode_decimal": 58946
+    },
+    {
+      "icon_id": "9285226",
+      "name": "宫格",
+      "font_class": "gongge",
+      "unicode": "e62c",
+      "unicode_decimal": 58924
+    },
+    {
+      "icon_id": "16213488",
+      "name": "面性瀑布",
+      "font_class": "mianxingpubu",
+      "unicode": "e606",
+      "unicode_decimal": 58886
+    },
+    {
+      "icon_id": "38687454",
+      "name": "首页",
+      "font_class": "shouye",
+      "unicode": "e623",
+      "unicode_decimal": 58915
+    }
+  ]
+}

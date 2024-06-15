@@ -1,0 +1,82 @@
+{
+	"pages": [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
+		{
+			"path": "pages/index/index",
+			"style": {
+				"navigationBarTitleText": "WJ-index"
+			}
+		},
+		{
+			"path": "pages/index/grid",
+			"style": {
+				"navigationBarTitleText": "WJ-grid"
+			}
+		},
+		{
+			"path": "pages/index/card",
+			"style": {
+				"navigationBarTitleText": "WJ-card"
+			}
+		},
+		{
+			"path": "pages/index/waterfall",
+			"style": {
+				"navigationBarTitleText": "WJ-waterfall"
+			}
+		}
+	],
+	"globalStyle": {
+		"navigationBarTextStyle": "black",
+		"navigationBarTitleText": "uni-app",
+		"navigationBarBackgroundColor": "#F8F8F8",
+		"backgroundColor": "#F8F8F8"
+	},
+	"uniIdRouter": {},
+	"easycom": {
+		"^u-(.*)": "@/uni_modules/uview-ui/components/u-$1/u-$1.vue"
+	},
+	  "tabBar": {
+	  		"iconfontSrc": "static/tab-icon/iconfont.ttf",
+	  		"color": "#7A7E83",
+	  		"selectedColor": "#3cc51f",
+	  		"list": [{
+	  			"text": "首页",
+	  			"pagePath": "pages/index/index",
+	  			"iconfont": {
+	  				"text": "\ue623",
+	  				"color": "#515151",
+	  				"selectedText": "\ue623",
+	  				"selectedColor": "#1296db"
+	  			}
+	  		}, {
+	  			"text": "宫格",
+	  			"pagePath": "pages/index/grid",
+	  			"iconfont": {
+	  				"text": "\ue62c",
+	  				"color": "#515151",
+	  				"selectedText": "\ue62c",
+	  				"selectedColor": "#1296db"
+	  			}
+	  
+	  		}, {
+	  			"text": "卡片",
+	  			"pagePath": "pages/index/card",
+	  			"iconfont": {
+	  				"text": "\ue642",
+	  				"color": "#515151",
+	  				"selectedText": "\ue642",
+	  				"selectedColor": "#1296db"
+	  			}
+				},{
+					"text": "瀑布",
+					"pagePath": "pages/index/waterfall",
+					"iconfont": {
+						"text": "\ue606",
+						"color": "#515151",
+						"selectedText": "\ue606",
+						"selectedColor": "#1296db"
+					}
+	  		}]
+	  	}
+
+}
